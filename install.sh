@@ -32,15 +32,13 @@ cp -R dotconfig/* /home/$username/.config/
 cp bg.jpg /home/$username/Pictures/
 mv user-dirs.dirs /home/$username/.config
 chown -R $username:$username /home/$username
-tar -xzvf sugar-candy.tar.gz -C /usr/share/sddm/themes
-mv /home/$username/.config/sddm.conf /etc/sddm.conf
 
-# Installing sugar-candy dependencies
-nala install libqt5svg5 qml-module-qtquick-controls qml-module-qtquick-controls2 -y
 # Installing Essential Programs 
-nala install feh bspwm sxhkd kitty rofi polybar picom thunar nitrogen lxpolkit x11-xserver-utils unzip yad wget pulseaudio pavucontrol -y
+nala install feh sxhkd kitty rofi picom nitrogen lxpolkit x11-xserver-utils unzip yad wget pulseaudio pavucontrol -y
 # Installing Other less important Programs
-nala install neofetch flameshot psmisc mangohud vim lxappearance papirus-icon-theme lxappearance fonts-noto-color-emoji sddm -y
+nala install neofetch flameshot psmisc mangohud htop lxappearance papirus-icon-theme lxappearance fonts-noto-color-emoji -y
+# kde
+apt -y install kde-plasma-desktop plasma-nm
 
 # Download Nordic Theme
 cd /usr/share/themes/
@@ -62,11 +60,11 @@ fc-cache -vf
 rm ./FiraCode.zip ./Meslo.zip
 
 # Install Nordzy cursor
-git clone https://github.com/alvatip/Nordzy-cursors
-cd Nordzy-cursors
-./install.sh
-cd $builddir
-rm -rf Nordzy-cursors
+#git clone https://github.com/alvatip/Nordzy-cursors
+#cd Nordzy-cursors
+#./install.sh
+#cd $builddir
+#rm -rf Nordzy-cursors
 
 # Install brave-browser
 sudo apt install apt-transport-https curl -y
@@ -76,5 +74,5 @@ sudo apt update
 sudo apt install brave-browser -y
 
 # Enable graphical login and change target from CLI to GUI
-systemctl enable sddm
-systemctl set-default graphical.target
+#systemctl enable sddm
+#systemctl set-default graphical.target
