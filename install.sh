@@ -34,7 +34,7 @@ mv user-dirs.dirs /home/$username/.config
 chown -R $username:$username /home/$username
 
 # Installing Essential Programs 
-nala install feh sxhkd kitty rofi picom lxpolkit x11-xserver-utils unzip yad wget pulseaudio pavucontrol -y
+nala install feh sxhkd kitty picom lxpolkit x11-xserver-utils unzip yad wget pulseaudio pavucontrol -y
 # Installing Other less important Programs
 nala install neofetch flameshot psmisc mangohud htop lxappearance papirus-icon-theme lxappearance fonts-noto-color-emoji -y
 # kde
